@@ -100,6 +100,17 @@ return packer.startup(function(use)
   -- git integration
   use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
 
+  -- install vim-be-good plugin for practice
+  use("ThePrimeagen/vim-be-good")
+
+  -- install markdow preivew
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+  })
+
   if packer_bootstrap then
     require("packer").sync()
   end

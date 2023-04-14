@@ -89,20 +89,10 @@ lspconfig["emmet_ls"].setup({
   filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
 })
 
-lspconfig["jedi_language_server"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
-})
-
 lspconfig["pyright"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
 })
-
--- lspconfig["pylsp"].setup({
---   capabilities = capabilities,
---   on_attach = on_attach,
--- })
 
 lspconfig["yamlls"].setup({
   capabilities = capabilities,
@@ -117,25 +107,4 @@ lspconfig["jdtls"].setup({
 lspconfig["jsonls"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
-})
-
--- configure lua server (with special settings)
-lspconfig["sumneko_lua"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
-  settings = { -- custom settings for lua
-    Lua = {
-      -- make the language server recognize "vim" global
-      diagnostics = {
-        globals = { "vim" },
-      },
-      workspace = {
-        -- make language server aware of runtime files
-        library = {
-          [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-          [vim.fn.stdpath("config") .. "/lua"] = true,
-        },
-      },
-    },
-  },
 })
