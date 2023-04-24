@@ -15,8 +15,8 @@ local packer_bootstrap = ensure_packer() -- true if packer was just installed
 -- when file is saved
 vim.cmd([[ 
   augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins-setup.lua source <afile> | PackerSync
+  autocmd!
+  autocmd BufWritePost plugins-setup.lua source <afile> | PackerSync
   augroup end
 ]])
 
@@ -110,6 +110,9 @@ return packer.startup(function(use)
       vim.fn["mkdp#util#install"]()
     end,
   })
+
+  -- install trouble plugin
+  use({ "folke/trouble.nvim" })
 
   if packer_bootstrap then
     require("packer").sync()
