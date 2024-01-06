@@ -3,23 +3,15 @@ local opt = vim.opt -- for conciseness
 -- line numbers
 opt.relativenumber = true -- show relative line numbers
 opt.number = true -- shows absolute line number on cursor line (when relative number is on)
-opt.swapfile = false
 
 -- tabs & indentation
-opt.tabstop = 4 -- 2 spaces for tabs (prettier default)
-opt.shiftwidth = 4 -- 2 spaces for indent width
+opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
+opt.shiftwidth = 2 -- 2 spaces for indent width
 opt.expandtab = true -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
-opt.smartindent = true
 
 -- line wrapping
 opt.wrap = false -- disable line wrapping
-
--- theprimeeagen
-opt.swapfile = false
-opt.backup = false
-opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-opt.undofile = true
 
 -- search settings
 opt.ignorecase = true -- ignore case when searching
@@ -46,10 +38,5 @@ opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
 
-opt.iskeyword:append("-") -- consider string-string as whole word
-
--- take from lunarvim
-opt.scrolloff = 8
-
--- take from theprimeeagen
-opt.colorcolumn = "80"
+-- turn off swapfile
+opt.swapfile = false
